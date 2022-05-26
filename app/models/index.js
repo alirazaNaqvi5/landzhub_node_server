@@ -49,4 +49,10 @@ db.cropwater = require("./old_databse_models/cropwater.model.js")(sequelize, Seq
 // defining crop_norms model for crop_norms table
 db.crop_norms = require("./old_databse_models/crop_norms.model.js")(sequelize, Sequelize);
 
+// defining ph_requirement model for ph_requirement table
+db.ph_requirement = require("./old_databse_models/ph_requirement.model.js")(sequelize, Sequelize);
+
+// defining tbl_fertilizer_requirements model for tbl_fertilizer_requirements table
+db.tbl_fertilizer_requirements = require("./old_databse_models/tbl_fertilizer_requirements.model.js")(sequelize, Sequelize);
+
 module.exports = db;

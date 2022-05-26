@@ -15,7 +15,7 @@ exports.findAll = (req, res) => {
       distinct: true,
       where: {
           status: {
-              [Op.gt]:0
+              [Op.gt]:"0"
           }
       }
     })
@@ -32,8 +32,35 @@ exports.findAll = (req, res) => {
 
 
 // Create and Save a new Tutorial
-exports.create = (req, res) => {
-    
+exports.crops = (req, res) => {
+    if(!req.body.cropfamily){
+        res.status(400).send({
+            message: "Content can not be empty!"
+        });
+        return;
+    }
+    Crop_norms.findAll({
+      attributes: ['crop_family', 'crop', 'importance', 'water_logged', 'sowing_seed_depth','base_temp','season','scientific_name','scientific_family','seedrate','crop_urdu' ],
+      where: {
+        crop_family: {
+              [Op.eq]: req.body.cropfamily
+          }
+      }
+    }).then(data => {
+      res.send(
+        data
+        .filter((obj)=>{if(!tempcrop.includes(obj["crop"])){tempcrop.push(obj.crop);   return obj;    }})
+        .map(obj=>{
+        obj.image = 'https://greenageservices.pk/assets/gallery/'+obj.crop.toLowerCase()+'.png'
+        return obj
+    }))
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
+      });
+    });
 };
 
 // Find a single Tutorial with an id

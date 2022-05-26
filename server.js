@@ -4,10 +4,7 @@ const cors = require("cors");
 const app = express();
 const db = require("./app/models");
 const Role = db.role;
-db.sequelize.sync({force: true}).then(() => {
-  console.log('Drop and Resync Db');
-  initial();
-});
+db.sequelize.sync();
 
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -27,22 +24,22 @@ app.get("/", (req, res) => {
 });
 
 
-function initial() {
-  Role.create({
-    id: 1,
-    name: "user"
-  });
+// function initial() {
+//   Role.create({
+//     id: 1,
+//     name: "user"
+//   });
  
-  Role.create({
-    id: 2,
-    name: "moderator"
-  });
+//   Role.create({
+//     id: 2,
+//     name: "moderator"
+//   });
  
-  Role.create({
-    id: 3,
-    name: "admin"
-  });
-}
+//   Role.create({
+//     id: 3,
+//     name: "admin"
+//   });
+// }
 
 
 
@@ -53,6 +50,11 @@ require('./app/routes/user.routes')(app);
 require('./app/routes/Agri_Reports/agri_reports.routes')(app);
 require("./app/routes/cropwater.routes")(app);
 require("./app/routes/crop_norms.routes")(app);
+require("./app/routes/lime_material.routes")(app);
+
+
+
+
 require("./app/routes/turorial.routes")(app);
 
 
