@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-
 const db = require("./app/models");
 const Role = db.role;
 db.sequelize.sync({force: true}).then(() => {
@@ -45,8 +44,15 @@ function initial() {
   });
 }
 
+
+
+
+
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
+require('./app/routes/Agri_Reports/agri_reports.routes')(app);
+require("./app/routes/cropwater.routes")(app);
+require("./app/routes/crop_norms.routes")(app);
 require("./app/routes/turorial.routes")(app);
 
 
