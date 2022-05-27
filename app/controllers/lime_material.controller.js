@@ -64,3 +64,33 @@ exports.soilTypes = (req, res) => {
       });
     });
 };
+
+
+exports.addData = (req, res) => {
+    // validating the req.body.input data
+    if (!req.body.Input) {
+        res.status(400).send({
+            message: "Content can not be empty!"
+        });
+        return;
+    }
+    // creating a new ph_requirement
+    const ph_requirement = {
+        crop: req.body.Input.crop,
+        soil_type: req.body.Input.soil_type,
+        lime_requirement: req.body.Input.lime_requirement,
+        target_ph: req.body.Input.target_ph,
+    };
+    // saving the ph_requirement in the database
+    Ph_requirement.create(ph_requirement)
+        .then(data => {
+            res.send(data);
+        }
+        )
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while creating the Tutorial."
+            });
+        });
+};

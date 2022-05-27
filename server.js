@@ -51,6 +51,8 @@ require('./app/routes/Agri_Reports/agri_reports.routes')(app);
 require("./app/routes/cropwater.routes")(app);
 require("./app/routes/crop_norms.routes")(app);
 require("./app/routes/lime_material.routes")(app);
+require("./app/routes/mandiRates.routes")(app);
+require("./app/routes/geoCode.routes")(app);
 
 
 

@@ -11,6 +11,9 @@ module.exports = app => {
     // get soil_type from \Tbl_fertilizer_requirements` table
     router.get("/soil_type", Lime_material.soilTypes);
 
+    // Create a new ph_requirement with the data from the request
+    router.get("/addData", Lime_material.addData);
+
     
 
 

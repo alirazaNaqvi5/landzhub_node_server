@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@google/earthengine": "^0.1.310",
+    "@turf/tag": "^6.5.0",
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -28,6 +29,7 @@
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.19.0",
-    "sequelize-auto": "^0.8.8"
+    "sequelize-auto": "^0.8.8",
+    "turf": "^3.0.14"
   }
 }

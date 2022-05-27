@@ -55,4 +55,7 @@ db.ph_requirement = require("./old_databse_models/ph_requirement.model.js")(sequ
 // defining tbl_fertilizer_requirements model for tbl_fertilizer_requirements table
 db.tbl_fertilizer_requirements = require("./old_databse_models/tbl_fertilizer_requirements.model.js")(sequelize, Sequelize);
 
+// defining tbl_rates model for tbl_rates table
+db.tbl_rates = require("./old_databse_models/tbl_rates.model.js")(sequelize, Sequelize);
+
 module.exports = db;
