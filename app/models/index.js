@@ -58,4 +58,17 @@ db.tbl_fertilizer_requirements = require("./old_databse_models/tbl_fertilizer_re
 // defining tbl_rates model for tbl_rates table
 db.tbl_rates = require("./old_databse_models/tbl_rates.model.js")(sequelize, Sequelize);
 
+// defining soil_testing model for soil_testing table
+db.soil_testing = require("./old_databse_models/soil_testing.model.js")(sequelize, Sequelize);
+
+// defining soil_report model for soil_report table
+db.soil_report = require("./old_databse_models/soil_report.model")(sequelize, Sequelize);
+
+// defining carbon_sequestration model for carbon_sequestration table
+db.carbon_sequestration = require("./carbon_sequestration.model.js")(sequelize, Sequelize);
+
+// defining Tree_Norms model for Tree_Norms table
+db.Tree_Norms = require("./Tree_Norms.model.js")(sequelize, Sequelize);
+
+
 module.exports = db;

@@ -52,7 +52,8 @@ require("./app/routes/cropwater.routes")(app);
 require("./app/routes/crop_norms.routes")(app);
 require("./app/routes/lime_material.routes")(app);
 require("./app/routes/mandiRates.routes")(app);
-require("./app/routes/geoCode.routes")(app);
+require("./app/routes/soilTesting.routes")(app);
+require("./app/routes/pollution_Remidation.routes")(app);
 
 
 
