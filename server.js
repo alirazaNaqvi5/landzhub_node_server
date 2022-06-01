@@ -54,6 +54,8 @@ require("./app/routes/lime_material.routes")(app);
 require("./app/routes/mandiRates.routes")(app);
 require("./app/routes/soilTesting.routes")(app);
 require("./app/routes/pollution_Remidation.routes")(app);
+require("./app/routes/production_technology.routes")(app);
+require("./app/routes/Promo_ticker.routes")(app);
 
 
 

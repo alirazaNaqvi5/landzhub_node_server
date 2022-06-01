@@ -70,5 +70,11 @@ db.carbon_sequestration = require("./carbon_sequestration.model.js")(sequelize, 
 // defining Tree_Norms model for Tree_Norms table
 db.Tree_Norms = require("./Tree_Norms.model.js")(sequelize, Sequelize);
 
+// defining production_technology model for production_technology table
+db.production_technology = require("./old_databse_models/production_technology.model.js")(sequelize, Sequelize);
+
+// defining Promo_ticker model for Promo_ticker table
+db.Promo_ticker = require("./old_databse_models/Promo_ticker.model.js")(sequelize, Sequelize);
+
 
 module.exports = db;
