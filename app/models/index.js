@@ -76,5 +76,17 @@ db.production_technology = require("./old_databse_models/production_technology.m
 // defining Promo_ticker model for Promo_ticker table
 db.Promo_ticker = require("./old_databse_models/Promo_ticker.model.js")(sequelize, Sequelize);
 
+// defining register_user.model model for register_user.model table
+db.register_user = require("./old_databse_models/register_user.model.js")(sequelize, Sequelize);
+
+// defining new_farmer_land model for new_farmer_land table
+db.new_farmer_land = require("./old_databse_models/new_farmer_land.model.js")(sequelize, Sequelize);
+
+// defining tbl_farmer_crops model for tbl_farmer_crops table
+db.tbl_farmer_crops = require("./old_databse_models/tbl_farmer_crops.model.js")(sequelize, Sequelize);
+
+
+
+
 
 module.exports = db;
