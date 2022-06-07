@@ -24,15 +24,15 @@ module.exports = app => {
 
 
     
-    // // Authentication middleware
-    // app.use(function(req, res, next) {
-    //     res.header(
-    //       "Access-Control-Allow-Headers",
-    //       "x-access-token, Origin, Content-Type, Accept"
-    //     );
-    //     next();
-    //   });
+    // Authentication middleware
+    app.use(function(req, res, next) {
+        res.header(
+          "Access-Control-Allow-Headers",
+          "x-access-token, Origin, Content-Type, Accept"
+        );
+        next();
+      });
   
       
-      app.use('/api/Profile', router);
+      app.use('/api/Profile',[authJwt.verifyToken], router);
 };

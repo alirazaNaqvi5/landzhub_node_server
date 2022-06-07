@@ -85,6 +85,12 @@ db.new_farmer_land = require("./old_databse_models/new_farmer_land.model.js")(se
 // defining tbl_farmer_crops model for tbl_farmer_crops table
 db.tbl_farmer_crops = require("./old_databse_models/tbl_farmer_crops.model.js")(sequelize, Sequelize);
 
+// defining landlease model for landlease table
+db.landlease = require("./old_databse_models/landlease.model.js")(sequelize, Sequelize);
+
+// defining db.soil_samples_punjab model for db.soil_samples_punjab table
+db.soil_samples_punjab = require("./old_databse_models/soil_samples_punjab.model.js")(sequelize, Sequelize);
+
 
 
 
