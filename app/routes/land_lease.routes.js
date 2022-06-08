@@ -48,6 +48,9 @@ module.exports = app => {
     // get nearestLandLease data from land_lease table
     router.get("/nearestLandLease", land_lease.nearestLandLease);
 
+    // get getleaseLand_approved data from land_lease table
+    router.get("/getleaseLand_approved", land_lease.getleaseLand_approved);
+
 
 
 

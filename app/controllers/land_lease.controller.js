@@ -46,7 +46,7 @@ exports.addland_lease = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                err.message || "Some error occurred while retrieving Promo_ticker."
+                    err.message || "Some error occurred while retrieving Promo_ticker."
             });
         });
 }
@@ -65,7 +65,7 @@ exports.getAll = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                err.message || "Some error occurred while retrieving Promo_ticker."
+                    err.message || "Some error occurred while retrieving Promo_ticker."
             });
         });
 }
@@ -79,7 +79,7 @@ exports.getleaseLand = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                err.message || "Some error occurred while retrieving Promo_ticker."
+                    err.message || "Some error occurred while retrieving Promo_ticker."
             });
         }
         );
@@ -98,7 +98,7 @@ exports.getleaseLand_disapproved = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                err.message || "Some error occurred while retrieving Promo_ticker."
+                    err.message || "Some error occurred while retrieving Promo_ticker."
             });
         }
         );
@@ -129,7 +129,7 @@ exports.nearestLandLease = (req, res) => {
     const getlandlease = (id, lat, lng) => {
         return new Promise((resolve, reject) => {
 
-            
+
 
             landlease.findAll({
                 where: {
@@ -164,7 +164,7 @@ exports.nearestLandLease = (req, res) => {
             }
         }
     })
-        .then(async(resData) => {
+        .then(async (resData) => {
 
             let data = await resData.map(async (item, i) => {
                 //  let tempData;
@@ -184,11 +184,96 @@ exports.nearestLandLease = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                err.message || "Some error occurred while retrieving data."
+                    err.message || "Some error occurred while retrieving data."
             });
         }
         );
 
+
+}
+
+exports.getleaseLand_approved = (req, res) => {
+    let startIndex = ((req.query.page * 5) - 5);
+    landlease.findAll({
+        attributes: ['landid'],
+        where: {
+            status: '1'
+        },
+        limit: 5,
+        offset: startIndex
+    }).then(async(result) => {
+
+        const getlandrecord = (id) => {
+
+            return new Promise((resolve, reject) => {
+
+                // greenagedbconn.query("SELECT * FROM `new_farmer_land` WHERE `id`= '" + id + "' ", (err, result) => {
+
+                //     if (err) { reject(err) } else {
+
+                //         resolve(result[0])
+                //     }
+                // })
+                new_farmer_land.findAll({
+                    where: {
+                        id: id
+                    }
+                }).then(data => {
+                    resolve(data[0])
+                })
+                .catch(err => {
+                    reject(err)
+                })
+            })
+
+        }
+
+        const getlandlease = (id) => {
+            return new Promise((resolve, reject) => {
+
+                // greenagedbconn.query("SELECT * FROM `landlease` WHERE `landid`='" + id + "' ", (err, result) => {
+
+                //     if (err) { reject(err) } else {
+
+                //         resolve(result)
+                //     }
+
+                // })
+                landlease.findAll({
+                    where: {
+                        landid: id
+                    }
+                }).then(data => {
+                    resolve(data)
+                }).catch(err => {
+                    reject(err)
+                }
+                )
+            })
+        }
+
+
+        let data = await result.map(async (item, i) => {
+            //  let tempData;
+
+
+
+            const a = await getlandrecord(item.landid)
+            const b = await getlandlease(item.landid)
+
+            return { "record": b.concat(a) }
+
+
+        })
+
+        res.send(await Promise.all(data))
+
+
+
+
+
+
+    })
 
 }
 
