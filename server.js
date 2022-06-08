@@ -58,6 +58,7 @@ require("./app/routes/production_technology.routes")(app);
 require("./app/routes/Promo_ticker.routes")(app);
 require("./app/routes/userProfile.routes")(app);
 require("./app/routes/land_lease.routes")(app);
+require("./app/routes/landRecord.routes")(app);
 
 
 
