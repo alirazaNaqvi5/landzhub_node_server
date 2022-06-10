@@ -91,6 +91,21 @@ db.landlease = require("./old_databse_models/landlease.model.js")(sequelize, Seq
 // defining db.soil_samples_punjab model for db.soil_samples_punjab table
 db.soil_samples_punjab = require("./old_databse_models/soil_samples_punjab.model.js")(sequelize, Sequelize);
 
+// defining crop_record_sub model for crop_record_sub table
+db.crop_record_sub = require("./old_databse_models/crop_record_sub.model.js")(sequelize, Sequelize);
+
+// defining subsub_catagories model for subsub_catagories table
+db.subsub_catagories = require("./old_databse_models/subsub_catagories.model.js")(sequelize, Sequelize);
+
+// definging sub_catagories model for sub_catagories table
+db.sub_catagories = require("./old_databse_models/sub_catagories.model.js")(sequelize, Sequelize);
+
+// definign crop_record model for crop_record table
+db.crop_record = require("./old_databse_models/crop_record.model.js")(sequelize, Sequelize);
+
+// defining crop_land_preparation model for crop_land_preparation table
+db.crop_land_preparation = require("./old_databse_models/crop_land_preparation.model.js")(sequelize, Sequelize);
+
 
 
 
