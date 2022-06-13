@@ -1,12 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('cropwater', {
-    id: {
-      autoIncrement: true,
-      autoIncrementIdentity: true,
-      type: DataTypes.BIGINT,
-      allowNull: false,
-      primaryKey: true
-    },
+   
     userid: {
       type: DataTypes.BIGINT,
       allowNull: false
@@ -54,20 +48,20 @@ module.exports = function(sequelize, DataTypes) {
     created: {
       type: DataTypes.DATE,
       allowNull: false
+    },
+    indices: {
+      type: DataTypes.JSON,
+      allowNull: false
+    },
+    status: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   }, {
     sequelize,
     tableName: 'cropwater',
     schema: 'public',
     timestamps: false,
-    indexes: [
-      {
-        name: "cropwater_pkey",
-        unique: true,
-        fields: [
-          { name: "id" },
-        ]
-      },
-    ]
+    
   });
 };

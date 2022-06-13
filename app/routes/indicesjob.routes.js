@@ -1,10 +1,12 @@
 module.exports = function (app) {
     const { authJwt } = require("../middleware");
-    const cropwater = require("../controllers/cropwater.controller.js");
+    const indicesJob = require("../controllers/indicesJob.controller.js");
     var router = require("express").Router();
 
-    // Add new data in cropwater table
-    router.post("/add", cropwater.create);
+    // Add new data in notificationJob table
+    router.get("/add", indicesJob.getIndicesByCropID);
+
+    indicesJob.Interval();
 
 
 
@@ -15,6 +17,5 @@ module.exports = function (app) {
         );
         next();
     });
-  
-    app.use("/api/cropwater",[authJwt.verifyToken], router);
+    app.use('/api/indicesjob',[authJwt.verifyToken], router);
 };

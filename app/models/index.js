@@ -106,6 +106,9 @@ db.crop_record = require("./old_databse_models/crop_record.model.js")(sequelize,
 // defining crop_land_preparation model for crop_land_preparation table
 db.crop_land_preparation = require("./old_databse_models/crop_land_preparation.model.js")(sequelize, Sequelize);
 
+// defining notifications model for notifications table
+db.notifications = require("./old_databse_models/notifications.model.js")(sequelize, Sequelize);
+
 
 
 
