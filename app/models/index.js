@@ -113,4 +113,16 @@ db.notifications = require("./old_databse_models/notifications.model.js")(sequel
 
 
 
+db.alerts = require('./old_databse_models/alerts.model')(sequelize,Sequelize)
+db.ticket_support = require('./old_databse_models/ticket_support.model')(sequelize,Sequelize)
+db.agrimachinery = require('./old_databse_models/agriMachinery.model')(sequelize,Sequelize)
+db.crop_varieties = require('./old_databse_models/crop_varieties.model')(sequelize,Sequelize)
+db.crop_varieties_sub = require('./old_databse_models/crop_varieties_sub.model')(sequelize,Sequelize)
+db.crop_sowing_methods =  require('./old_databse_models/crop_sowing_methods.model')(sequelize,Sequelize)
+db.plant_analysis = require('./old_databse_models/plant_analysis.model')(sequelize,Sequelize)
+
+
+
+
+
 module.exports = db;

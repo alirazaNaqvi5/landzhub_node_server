@@ -5,6 +5,7 @@ const app = express();
 const db = require("./app/models");
 const Role = db.role;
 db.sequelize.sync();
+const { authJwt } = require("./app/middleware");
 
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -65,10 +66,27 @@ require("./app/routes/indicesjob.routes")(app);
 
 
 
-
 require("./app/routes/turorial.routes")(app);
+require("./app/routes/login.route")(app);
 
+app.use(function (req, res, next) {
+  res.header(
+      "Access-Control-Allow-Headers",
+      "x-access-token, Origin, Content-Type, Accept"
+  );
+  next();
+});
 
+app.use([authJwt.verifyToken])
+// ===================== Saad k karnamy starts from here ============================
+require("./app/routes/alerts.route")(app);
+require("./app/routes/ticket.route")(app);
+require("./app/routes/simulator.route")(app);
+require("./app/routes/agriMachinery.route")(app);
+require("./app/routes/AddCropRecord.route")(app);
+require("./app/routes/seedrate.route")(app);
+require("./app/routes/plantanalysis.route")(app);
+// ===================== Saad k karnamy END here ============================
 
 
 

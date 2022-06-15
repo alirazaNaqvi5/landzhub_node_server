@@ -1,13 +1,15 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('plant_analysis', {
-    id: {
+  return sequelize.define('AgriMachinery', {
+    index: {
       type: DataTypes.BIGINT,
-      allowNull: true,
-      primaryKey: true,
-      autoIncrement: true,
+      allowNull: true
     },
-    description: {
+    name: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    address: {
       type: DataTypes.TEXT,
       allowNull: true
     },
@@ -15,26 +17,27 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: true
     },
-    location: {
-      type: DataTypes.TEXT,
+    Age: {
+      type: DataTypes.BIGINT,
       allowNull: true
     },
-    date: {
-      type: DataTypes.DATE,
+    Designation: {
+      type: DataTypes.TEXT,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'plant_analysis',
+    tableName: 'Agri_machinery',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "ix_plant_analysis_id",
+        name: "ix_Agri_machinery_index",
         fields: [
-          { name: "id" },
+          { name: "index" },
         ]
       },
     ]
   });
 };
+// npx sequelize-auto -o "./models" -d dataofmysql -h 192.168.100.17 -u postgres -p 5432 -x greenage -e postgres -t alerts

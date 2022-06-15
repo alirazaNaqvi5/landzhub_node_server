@@ -8,6 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     ticket_id: {
       type: DataTypes.BIGINT,
       allowNull: true
+  
     },
     user_id: {
       type: DataTypes.BIGINT,

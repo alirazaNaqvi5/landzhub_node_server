@@ -2,11 +2,10 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('alerts', {
     id: {
-      autoIncrement: true,
-      autoIncrementIdentity: true,
       type: DataTypes.BIGINT,
-      allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: true,
     },
     status: {
       type: DataTypes.SMALLINT,
@@ -28,7 +27,6 @@ module.exports = function(sequelize, DataTypes) {
     expired: {
       type: DataTypes.DATE,
       allowNull: true,
-      defaultValue: "NULL"
     },
     valid: {
       type: DataTypes.INTEGER,

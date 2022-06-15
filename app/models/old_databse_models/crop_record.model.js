@@ -52,6 +52,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(100),
       allowNull: true
     },
+    actual_sowing_date: {
+      type: DataTypes.STRING(100),
+      allowNull: true
+    },
     status: {
       type: DataTypes.BIGINT,
       allowNull: false,

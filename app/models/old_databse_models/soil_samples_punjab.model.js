@@ -1,10 +1,7 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('soil_samples_punjab', {
-    index: {
-      type: DataTypes.BIGINT,
-      allowNull: true
-    },
+    
     id: {
       type: DataTypes.BIGINT,
       allowNull: true,
@@ -95,13 +92,6 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'soil_samples_punjab',
     schema: 'public',
     timestamps: false,
-    indexes: [
-      {
-        name: "ix_soil_samples_punjab_index",
-        fields: [
-          { name: "index" },
-        ]
-      },
-    ]
+    
   });
 };

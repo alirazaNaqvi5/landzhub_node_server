@@ -1,14 +1,10 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('register_user', {
-    index: {
-      type: DataTypes.BIGINT,
-      allowNull: true
-    },
-    id: {
-      type: DataTypes.BIGINT,
-      allowNull: true,
-      primaryKey: true
+    id : {
+      type : DataTypes.INTEGER,
+      primaryKey : true,
+      autoIncrement : true
     },
     fullname: {
       type: DataTypes.TEXT,
@@ -111,13 +107,6 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'register_user',
     schema: 'public',
     timestamps: false,
-    indexes: [
-      {
-        name: "ix_register_user_index",
-        fields: [
-          { name: "index" },
-        ]
-      },
-    ]
+   
   });
 };
