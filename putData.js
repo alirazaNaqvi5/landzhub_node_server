@@ -1,13 +1,13 @@
 const db = require("./app/models");
 db.sequelize.sync();
-const Crop_norms = db.cropwater;
+const Crop_norms = db.register_user;
 const axios = require("axios")
 
 const Op = db.Sequelize.Op;
 
 
 
-axios.get("https://www.api.greenageservices.pk/cropinfo/test_test").then(res => {
+axios.get("https://www.api.greenageservices.pk/cropinfo/testdb").then(res => {
   // console.log(res.data);
   res.data.forEach((element, id) => {
     Crop_norms.create(element)

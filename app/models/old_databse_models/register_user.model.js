@@ -1,11 +1,7 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('register_user', {
-    id : {
-      type : DataTypes.INTEGER,
-      primaryKey : true,
-      autoIncrement : true
-    },
+ 
     fullname: {
       type: DataTypes.TEXT,
       allowNull: true
