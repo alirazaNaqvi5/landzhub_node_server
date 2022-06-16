@@ -17,5 +17,5 @@ module.exports = app => {
     router.get('/deletebyage', AgriMachinery.updateagriMachinery);
     router.post('/test', upload.single('Image'), AgriMachinery.addAgriMachinery);
 
-    app.use("/api/agriMachinery", router);
+    app.use("/agriMachinery", router);
 }

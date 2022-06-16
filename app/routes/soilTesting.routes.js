@@ -29,5 +29,5 @@ module.exports = app => {
     });
 
     
-    app.use('/api/soilTest',[authJwt.verifyToken], router);
+    app.use('/soilTest',[authJwt.verifyToken], router);
   };

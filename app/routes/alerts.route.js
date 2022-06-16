@@ -17,5 +17,5 @@ module.exports = app => {
     router.post("/addalert", upload.single('Image'), Alert.addAlert)
 
 
-    app.use("/api/alerts", router);
+    app.use("/alerts", router);
 }

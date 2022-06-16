@@ -8,5 +8,5 @@ module.exports = function(app) {
     );
     next();
   });
-  app.get("/api/agri_reports/getAll",[authJwt.verifyToken], controller.getAll);
+  app.get("/agri_reports/getAll",[authJwt.verifyToken], controller.getAll);
 };

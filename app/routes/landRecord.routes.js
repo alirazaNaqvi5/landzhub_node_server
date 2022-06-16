@@ -24,6 +24,6 @@ module.exports = app => {
       });
       
       
-      app.use('/api/landrecord',[authJwt.verifyToken], router);
+      app.use('/landrecord',[authJwt.verifyToken], router);
       
 };

@@ -17,5 +17,5 @@ module.exports = function (app) {
         );
         next();
     });
-    app.use('/api/notificationjob',[authJwt.verifyToken], router);
+    app.use('/notificationjob',[authJwt.verifyToken], router);
 };

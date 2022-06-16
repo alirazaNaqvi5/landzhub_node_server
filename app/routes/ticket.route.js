@@ -28,5 +28,5 @@ module.exports=app=>{
     router.post('/submitticket',upload.single('Image'),Ticket.submitTicket);
 
 
-    app.use("/api/ticket",router);
+    app.use("/ticket",router);
     }

@@ -13,5 +13,5 @@ module.exports=app=>{
     const upload = multer({ storage: storage });
     const PlantAnalysis=require('../controllers/plantAnalysis.controller.js');
    router.get("/submit",upload.single('Image'), PlantAnalysis.addPlantAnalysis)
-    app.use("/api/plant_analysis", router)
+    app.use("/plant_analysis", router)
     }

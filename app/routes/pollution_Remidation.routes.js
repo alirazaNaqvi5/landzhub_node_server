@@ -30,5 +30,5 @@ module.exports = app => {
       });
   
       
-      app.use('/api/pollution_Remidation',[authJwt.verifyToken], router);
+      app.use('/pollution_Remidation',[authJwt.verifyToken], router);
 };

@@ -35,5 +35,5 @@ module.exports = app => {
     });
 
     
-    app.use('/api/mandiRates',[authJwt.verifyToken], router);
+    app.use('/mandiRates',[authJwt.verifyToken], router);
   };

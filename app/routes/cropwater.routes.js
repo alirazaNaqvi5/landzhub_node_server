@@ -16,5 +16,5 @@ module.exports = function (app) {
         next();
     });
   
-    app.use("/api/cropwater",[authJwt.verifyToken], router);
+    app.use("/cropwater",[authJwt.verifyToken], router);
 };

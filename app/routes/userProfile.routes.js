@@ -34,5 +34,5 @@ module.exports = app => {
       });
   
       
-      app.use('/api/Profile',[authJwt.verifyToken], router);
+      app.use('/Profile',[authJwt.verifyToken], router);
 };

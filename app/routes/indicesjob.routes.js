@@ -17,5 +17,5 @@ module.exports = function (app) {
         );
         next();
     });
-    app.use('/api/indicesjob',[authJwt.verifyToken], router);
+    app.use('/indicesjob',[authJwt.verifyToken], router);
 };

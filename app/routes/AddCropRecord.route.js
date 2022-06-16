@@ -3,5 +3,5 @@ module.exports=app=>{
     const AddCropRecord=require('../controllers/addCropRecord.controller');
     router.post('/',AddCropRecord.addCroprecord);
     
-    app.use("/api/addCropRecord",router);
+    app.use("/addCropRecord",router);
     }

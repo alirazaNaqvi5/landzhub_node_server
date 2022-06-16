@@ -8,7 +8,7 @@ db.sequelize.sync();
 const { authJwt } = require("./app/middleware");
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:4000"
 };
 
 app.use(cors(corsOptions));
@@ -91,7 +91,7 @@ require("./app/routes/plantanalysis.route")(app);
 
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

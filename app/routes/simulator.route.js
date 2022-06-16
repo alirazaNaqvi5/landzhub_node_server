@@ -4,5 +4,5 @@ module.exports=app=>{
     router.get('/test',Simulator.getCrop_record);
     router.put('/setSowingDate',Simulator.setSowingDate);
 
-    app.use("/api/simulator",router);
+    app.use("/simulator",router);
     }

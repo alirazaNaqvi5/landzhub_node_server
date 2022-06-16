@@ -28,5 +28,5 @@ module.exports = app => {
     });
 
     
-    app.use('/api/cropinfo/crop_norms',[authJwt.verifyToken], router);
+    app.use('/cropinfo/crop_norms',[authJwt.verifyToken], router);
   };

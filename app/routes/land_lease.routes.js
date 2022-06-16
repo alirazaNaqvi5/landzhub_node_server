@@ -65,5 +65,5 @@ module.exports = app => {
       });
   
       
-    app.use('/api/land_lease',[authJwt.verifyToken], router);
+    app.use('/land_lease',[authJwt.verifyToken], router);
 };

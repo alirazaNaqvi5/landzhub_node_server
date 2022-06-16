@@ -22,5 +22,5 @@ module.exports = app => {
       });
   
       
-      app.use('/api/Promo_ticker',[authJwt.verifyToken], router);
+      app.use('/Promo_ticker',[authJwt.verifyToken], router);
 };

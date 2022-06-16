@@ -5,6 +5,6 @@ module.exports=app=>{
     router.get("/variety_details",SeedRate.variety_details)
     router.get("/varieties",SeedRate.getVarities)
     router.get("/calculate",SeedRate.getcalculate)
-    app.use("/api/seedrate",router);
+    app.use("/seedrate",router);
 
     }

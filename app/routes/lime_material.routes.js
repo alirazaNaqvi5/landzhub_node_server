@@ -27,5 +27,5 @@ module.exports = app => {
     });
 
     
-    app.use('/api/lime_material',[authJwt.verifyToken], router);
+    app.use('/lime_material',[authJwt.verifyToken], router);
   };

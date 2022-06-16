@@ -33,5 +33,5 @@ module.exports = app => {
       });
   
       
-      app.use('/api/production_technology',[authJwt.verifyToken], router);
+      app.use('/production_technology',[authJwt.verifyToken], router);
 };
