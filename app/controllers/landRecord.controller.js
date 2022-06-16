@@ -498,3 +498,22 @@ exports.addData = (req, res) => {
         }
     })
 }
+
+
+// delete land record based on id
+exports.deleteData = (req, res) => {
+    new_farmer_land.destroy({
+        where: {
+            id: req.query.id
+        }
+    }).then(result => {
+        res.send(result)
+    }
+    ).catch(err => {
+        res.send({
+            status: 400,
+            error: err
+        })
+    }
+    )
+}

@@ -9,6 +9,9 @@ module.exports = app => {
     // Add data in new_farmer_land table
     router.post("/add", landRecord.addData);
 
+    // Delete land record based on id
+    router.delete("/deleteLand", landRecord.deleteData);
+
     
     landRecord.Interval()
     

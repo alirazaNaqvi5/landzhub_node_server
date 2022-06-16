@@ -1,15 +1,7 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('new_farmer_land', {
-    index: {
-      type: DataTypes.BIGINT,
-      allowNull: true
-    },
-    id: {
-      type: DataTypes.BIGINT,
-      allowNull: true,
-      primaryKey: true
-    },
+   
     size: {
       type: DataTypes.TEXT,
       allowNull: true
@@ -63,13 +55,6 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'new_farmer_land',
     schema: 'public',
     timestamps: false,
-    indexes: [
-      {
-        name: "ix_new_farmer_land_index",
-        fields: [
-          { name: "index" },
-        ]
-      },
-    ]
+   
   });
 };

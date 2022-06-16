@@ -1,6 +1,6 @@
 const db = require("./app/models");
 db.sequelize.sync();
-const Crop_norms = db.register_user;
+const Crop_norms = db.new_farmer_land;
 const axios = require("axios")
 
 const Op = db.Sequelize.Op;
