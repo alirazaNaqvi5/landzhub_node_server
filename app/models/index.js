@@ -109,6 +109,29 @@ db.crop_land_preparation = require("./old_databse_models/crop_land_preparation.m
 // defining notifications model for notifications table
 db.notifications = require("./old_databse_models/notifications.model.js")(sequelize, Sequelize);
 
+// defining Blog model for Blog table
+db.blogs = require("./old_databse_models/Blogs.model.js")(sequelize, Sequelize);
+
+// defining crop_stages model for crop_stages table
+
+db.crop_stages = require("./old_databse_models/crop_stages.model.js")(sequelize, Sequelize);
+
+//defining categories of the faq's
+// db.categories = require("./old_databse_models/catagories.model.js")(sequelize, Sequelize);
+
+//DEFINING  CATOGROY
+db.category = require("./Category.model.js")(sequelize, Sequelize);
+
+//defining to get all the Question-answer
+
+db.category = require("./Category.model.js")(sequelize, Sequelize);
+
+//defining Question-answer
+db.faqs = require("./CategoryQA.model.js")(sequelize, Sequelize);
+
+
+
+
 
 
 

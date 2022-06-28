@@ -1,13 +1,7 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('crop_stages', {
-    id: {
-      autoIncrement: true,
-      autoIncrementIdentity: true,
-      type: DataTypes.BIGINT,
-      allowNull: false,
-      primaryKey: true
-    },
+   
     crop: {
       type: DataTypes.STRING(16),
       allowNull: true
@@ -65,14 +59,6 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'crop_stages',
     schema: 'public',
     timestamps: false,
-    indexes: [
-      {
-        name: "crop_stages_pkey",
-        unique: true,
-        fields: [
-          { name: "id" },
-        ]
-      },
-    ]
+    
   });
 };

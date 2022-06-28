@@ -10,7 +10,7 @@ const Op = db.Sequelize.Op;
 
 exports.uploadProfileImage = (req, res) => {
     const file = req.file.filename
-    const filename = 'https://api.greenageservices.pk/ProfilePictures/' + file
+    const filename = 'https:/agronomics.pk/uploads/' + file
     register_user.update({
         Image: filename,
     }, {

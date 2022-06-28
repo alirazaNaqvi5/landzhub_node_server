@@ -13,7 +13,7 @@ module.exports = app => {
     // Retrieve Crops names based on city name from the database.
     router.post("/crops", mandiRates.getCropsByCityName);
 
-    // Retrieve all City Names from the database.
+    // Retrieve all City Names from the database.  
     router.get("/cities", mandiRates.getCityNames);
 
     // Retrieve all Crop Names from the database.

@@ -17,6 +17,11 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+// make express static folders
+app.use("/uploads",express.static("./uploads"));
+app.use("/agriMachineryPictures",express.static("./agriMachineryPictures"));
+app.use("/alertuploads",express.static("./alertuploads"));
+
 
 
 // simple route
@@ -63,6 +68,7 @@ require("./app/routes/landRecord.routes")(app);
 require("./app/routes/cropwater.routes")(app);
 require("./app/routes/notificationjob.routes")(app);
 require("./app/routes/indicesjob.routes")(app);
+require("./app/routes/faqs.routes")(app);
 
 
 
