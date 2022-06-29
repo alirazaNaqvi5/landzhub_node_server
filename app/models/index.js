@@ -129,6 +129,10 @@ db.category = require("./Category.model.js")(sequelize, Sequelize);
 //defining Question-answer
 db.faqs = require("./CategoryQA.model.js")(sequelize, Sequelize);
 
+//fopr professionals meet
+db.meetProfessional = require("./meetProfessional.model.js")(sequelize, Sequelize);
+
+
 
 
 

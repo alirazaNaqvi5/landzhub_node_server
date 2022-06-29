@@ -11,16 +11,26 @@ const Op = db.Sequelize.Op;
 
 
 exports.submit_sample = (req, res) => {
-    soil_testing.create({
-        user_id: req.body.userId,
-        location: req.body.location,
-        status: req.body.status,
-        date: new Date(),
-        test_type: '0',
-        report: null
+
+    soil_testing.findAll({
+        attributes: [db.Sequelize.fn('max', db.Sequelize.col('id'))],
+        raw: true,
     }).then(data => {
-        res.send(data);
-    }).catch(err => {
+        const sampleId = "AG-"+ req.body.userId + "-" + data[0].max.toString()
+        soil_testing.create({
+            user_id: req.body.userId,
+            location: req.body.location,
+            status: req.body.status,
+            date: new Date(),
+            sample_id: sampleId,
+            test_type: '0',
+            report: null
+        }).then(response => {
+            res.send(response);
+        })
+    })
+
+    .catch(err => {
         res.status(500).send({
             message:
                 err.message || "Some error occurred while retrieving tutorials."

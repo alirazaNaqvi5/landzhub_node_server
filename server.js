@@ -69,6 +69,8 @@ require("./app/routes/cropwater.routes")(app);
 require("./app/routes/notificationjob.routes")(app);
 require("./app/routes/indicesjob.routes")(app);
 require("./app/routes/faqs.routes")(app);
+require("./app/routes/meetProfessional.routes")(app);
+
 
 
 
