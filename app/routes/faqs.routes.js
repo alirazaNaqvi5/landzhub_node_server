@@ -8,7 +8,14 @@ module.exports = function (app) {
 
     // get "sub_stage" from "crop_stages" bsed on crop name.
     router.post("/substages", faqs.getSubStageBasedOnCrop);
+
     router.post("/getCategories", faqs.getCategoriesList);
+
     router.post("/getAllQA", faqs.getAllQA);
+
+    router.get("/getPromo", faqs.getPromo);
+
+
+
     app.use("/faqs", router);
 };

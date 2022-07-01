@@ -22,6 +22,15 @@ module.exports = function(sequelize, DataTypes) {
     date: {
       type: DataTypes.DATE,
       allowNull: true
+    },
+    userId :{
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    adminResponse: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+      defaultValue: null
     }
   }, {
     sequelize,

@@ -5,6 +5,7 @@ const crop_stages = db.crop_stages;
 const Op = db.Sequelize.Op;
 const category=db.category;
 const faqs =db.faqs;
+const Promo = db.Promo;
 
 exports.getCropsFromCropNorms = ( req, res ) =>{
     crop_norms.findAll({
@@ -86,4 +87,30 @@ exports.getAllQA=(req,res)=>{
                 err.message || "Some error occurred while retrieving tutorials."
         });
     });
+}
+
+
+
+
+exports.getPromo=(req,res)=>{
+    Promo.findAll({
+        where:{
+            status: {
+                [Op.gt]: 0
+            }
+        }
+
+    })
+    .then(data => {
+        res.send(data);
+    }
+    )
+    .catch(err => {
+        res.status(500).send({
+            message:
+                err.message || "Some error occurred while retrieving Promos."
+        });
+    }
+    );
+
 }

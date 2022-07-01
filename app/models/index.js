@@ -132,6 +132,9 @@ db.faqs = require("./CategoryQA.model.js")(sequelize, Sequelize);
 //fopr professionals meet
 db.meetProfessional = require("./meetProfessional.model.js")(sequelize, Sequelize);
 
+//for promo table
+db.Promo = require("./promo.model.js")(sequelize, Sequelize);
+
 
 
 
