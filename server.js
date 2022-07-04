@@ -11,16 +11,13 @@ var corsOptions = {
   origin: "http://localhost:4000"
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 // parse requests of content-type - application/json
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// make express static folders
-app.use("/uploads",express.static("./uploads"));
-app.use("/agriMachineryPictures",express.static("./agriMachineryPictures"));
-app.use("/alertuploads",express.static("./alertuploads"));
+
 
 
 
@@ -53,23 +50,8 @@ app.get("/", (req, res) => {
 
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
-require('./app/routes/Agri_Reports/agri_reports.routes')(app);
-require("./app/routes/cropwater.routes")(app);
-require("./app/routes/crop_norms.routes")(app);
-require("./app/routes/lime_material.routes")(app);
-require("./app/routes/mandiRates.routes")(app);
-require("./app/routes/soilTesting.routes")(app);
-require("./app/routes/pollution_Remidation.routes")(app);
-require("./app/routes/production_technology.routes")(app);
-require("./app/routes/Promo_ticker.routes")(app);
-require("./app/routes/userProfile.routes")(app);
-require("./app/routes/land_lease.routes")(app);
-require("./app/routes/landRecord.routes")(app);
-require("./app/routes/cropwater.routes")(app);
-require("./app/routes/notificationjob.routes")(app);
-require("./app/routes/indicesjob.routes")(app);
-require("./app/routes/faqs.routes")(app);
-require("./app/routes/meetProfessional.routes")(app);
+require('./app/routes/lands.routes')(app);
+
 
 
 
@@ -77,24 +59,6 @@ require("./app/routes/meetProfessional.routes")(app);
 require("./app/routes/turorial.routes")(app);
 require("./app/routes/login.route")(app);
 
-app.use(function (req, res, next) {
-  res.header(
-      "Access-Control-Allow-Headers",
-      "x-access-token, Origin, Content-Type, Accept"
-  );
-  next();
-});
-
-app.use([authJwt.verifyToken])
-// ===================== Saad k karnamy starts from here ============================
-require("./app/routes/alerts.route")(app);
-require("./app/routes/ticket.route")(app);
-require("./app/routes/simulator.route")(app);
-require("./app/routes/agriMachinery.route")(app);
-require("./app/routes/AddCropRecord.route")(app);
-require("./app/routes/seedrate.route")(app);
-require("./app/routes/plantanalysis.route")(app);
-// ===================== Saad k karnamy END here ============================
 
 
 

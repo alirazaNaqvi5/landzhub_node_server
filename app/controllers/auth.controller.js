@@ -11,7 +11,10 @@ exports.signup = (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, 8)
+    password: bcrypt.hashSync(req.body.password, 8),
+    phone: req.body.phone,
+    name: req.body.name
+
   })
     .then(user => {
       if (req.body.roles) {
@@ -37,7 +40,11 @@ exports.signup = (req, res) => {
       res.status(500).send({ message: err.message });
     });
 };
+
+
+
 exports.signin = (req, res) => {
+ if(req.body.username && req.body.password) {
   User.findOne({
     where: {
       username: req.body.username
@@ -70,11 +77,16 @@ exports.signin = (req, res) => {
           username: user.username,
           email: user.email,
           roles: authorities,
+          name: user.name,
+          phone: user.phone,
           accessToken: token
         });
       });
     })
     .catch(err => {
       res.status(500).send({ message: err.message });
-    });
+    });}
+    else {
+      res.status(500).send({ message: "Please enter username and password" });
+    }
 };
